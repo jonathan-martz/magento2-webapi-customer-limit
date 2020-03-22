@@ -8,7 +8,7 @@
     }],
     "require": {
         "magento/module-webapi": ">=100.0.2",
-        "jonathan-martz/magento2-webapi-log": "*"
+        "jonathan-martz/magento2-webapi-log": "^0.1"
     },
     "type": "magento2-module",
     "license": "MIT",
