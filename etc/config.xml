@@ -4,6 +4,7 @@
         <webapi-customer-limit>
             <general>
                 <enable>1</enable>
+                <daily-limit>100</daily_limit>
             </general>
         </webapi-customer-limit>
     </default>
