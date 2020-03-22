@@ -74,6 +74,10 @@ class Api
         $this->scopeConfig = $scopeConfig;
     }
 
+    public function getLimit(){
+        return $this->scopeConfig->getValue(self::CONFIG_LIMIT, 'stores');
+    }
+
     /**
      * @param Rest $subject
      * @param callable $proceed
@@ -94,9 +98,7 @@ class Api
         $collection = $model->getCollection();
         $collection->addFieldToFilter('ip' , ['eq' => sha1($ip)]);
 
-        var_dump($this->scopeConfig->getValue(self::CONFIG_LIMIT, 'stores'));
-
-        if(count($collection) > 100){
+        if(count($collection) > $this->getLimit()){
             $this->logger->alert('User blocked: ' . sha1($ip));
             $resultJson = $this->resultJsonFactory->create();
             $resultJson->setData(['message' => 'Already created 100 users today.']);
