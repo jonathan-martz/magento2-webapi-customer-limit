@@ -1,0 +1,23 @@
+{
+    "name": "jonathan-martz/magento2-webapi-customer-limit",
+    "description": "Customer Limit for Magento2 Web Api",
+    "authors": [{
+        "name": "Jonathan Martz",
+        "email": "composer@jmartz.de",
+        "homepage": "https://www.jmartz.de"
+    }],
+    "require": {
+        "magento/module-webapi": ">=100.0.2",
+        "jonathan-martz/magento2-webapi-log": "*"
+    },
+    "type": "magento2-module",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "JonathanMartz\\WebApiCustomerLimit\\": "."
+        }
+    }
+}
